@@ -2,25 +2,31 @@
 #include <stdio.h>
 int main(void)
 {
-    int height; // Declaring a variable named height
-    // Taking height input from user.
+    int height; // declaring a variable named height
+    // prompt for height from 1 to 8
     do
     {
         height = get_int("Height: ");
     }
-    while (height < 1 || height > 8); // Taking inclusive height between 1 and 8
-    // Loop through each row
-    for (int i = 0; i < height; i++) // Here 'i' is row
+    while (height < 1 || height > 8);
+    for (int i = 0; i < height; i++) // here 'i' is row
     {
-        for (int j = 0; j < height - i - 1; j++) // Here 'j' is space
+        for (int j = 0; j < height - i - 1; j++) // here 'j' is space
         {
             printf(" ");
         }
-        // Printing Hashtags(#)
-        for (int h = 0; h <= i; h++) // Here 'h' is hash
+        // printing left hashes
+        for (int k = 0; k <= i; k++)
         {
             printf("#");
         }
-        printf("\n"); // Change to next line
+        // printing gaps (2 spaces)
+        printf("  ");
+        // printing right hashes
+        for (int l = 0; l <= i; l++)
+        {
+            printf("#");
+        }
+        printf("\n");
     }
 }
